@@ -1,0 +1,56 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.dragItem {
+  width: 240px;
+  height: 240px;
+  background-color: #fdd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  touch-action: none;
+}
+
+.dropAreaList {
+  display: flex;
+  column-gap: 24px;
+  margin-top: 24px;
+  p {
+    margin: 0;
+  }
+}
+
+.dropArea {
+  width: 240px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddf;
+}
+
+.dragItemList {
+  display: flex;
+  column-gap: 24px;
+}
+
+.dragItemWrapper {
+  position: relative;
+}
+
+.dragItemIcon {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  top: 0%;
+  left: 0%;
+  z-index: 9999;
+  box-shadow: 0 0 16px rgb(0 0 0 /50%);
+}
