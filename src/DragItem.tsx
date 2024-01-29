@@ -84,7 +84,7 @@ export const DragItem: FC<Props> = ({ index, droppableArea, onDrop }) => {
         whileDrag={{ opacity: 0.5 }}
         onDrag={(_, info) => console.log(info.point)}
         onDragEnd={(_, info) => {
-          console.log(info.point,droppableAreaRect)
+          console.log(info.point, droppableAreaRect);
           const { canDrop, targetAreaIndex } = determineCanDrop(info.point);
           if (canDrop && targetAreaIndex !== undefined) {
             console.log("dropped");
