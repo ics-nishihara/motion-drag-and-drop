@@ -25,17 +25,24 @@ export const DragItem: FC<Props> = ({ index, droppableArea, onDrop }) => {
 
   const controls = useDragControls();
 
+  const timeOutId = useRef<number>();
+
+
   const startDrag = (event: PointerEvent) => {
-    controls.start(event, { snapToCursor: false });
-    console.log(ref.current);
-    if (!ref.current) {
-      return;
-    }
-    const html = ref.current.innerHTML;
-    setDragHtml(html);
+    timeOutId.current = window.setTimeout(() => {
+      controls.start(event, { snapToCursor: false });
+      console.log(ref.current);
+      if (!ref.current) {
+        return;
+      }
+      const html = ref.current.innerHTML;
+      setDragHtml(html);
+    },300)
+
   };
 
   const endDrag = () => {
+    clearTimeout(timeOutId.current);
     setDragHtml("");
   };
 
